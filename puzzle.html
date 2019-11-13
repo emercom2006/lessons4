@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Загадки</title>
+	<link rel="stylesheet" href="style.css"> 
+	<script type="text/javascript">
+
+		var score = 0;
+
+		function checkAnswer(inputId, answers){
+			var userAnswer = document.getElementById(inputId).value;
+			userAnswer = userAnswer.toLowerCase();
+			for(var i = 0; i < answers.length; i++){
+				if(userAnswer == answers[i]){
+					score++;
+					break;
+				}
+			}
+		}
+		
+		function checkAnswers() {
+
+			checkAnswer("userAnswer1", ["девять","9"]);
+			checkAnswer("userAnswer2", ["четыре", "4"]);
+			checkAnswer("userAnswer3", ["единица", "1"]);
+
+			alert("Вы отгадали " + score + " загадок");
+
+		}
+
+	</script>
+</head>
+<body>
+
+<div class="content">
+	<div class="header">
+		<a href="index.html">Главная</a>
+		<a href="#">Загадки</a>
+		<a href="guess.html">Угадайка</a>
+		<a href="password_generator.html">Генератор паролей</a>
+	</div>
+
+<div class="contentWrap">
+    <div class="content">
+        <div class="center">
+
+			<h1>Игра в загадки</h1>
+
+			<div class="box">
+
+				<p>Цифра шесть перевернулась, новой цифрой обернулась...</p>
+				<input type="text" id="userAnswer1">
+
+				<p>Кто-то ночью старый стул спинкой вниз перевернул. И теперь у нас в квартире Стал он цифрою ...</p>
+				<input type="text" id="userAnswer2">
+
+				<p>С хитрым носиком сестрица счёт откроет ...</p>
+				<input type="text" id="userAnswer3">
+
+				<br>
+				<a href="#" onClick="checkAnswers();">Ответить</a>
+
+			</div>
+
+        </div>
+    </div>
+</div>
+
+	
+
+</div>
+<div class="footer">
+	Copyright &copy; Popov Aleksandr
+<div>
+
+
+</body>
+</html>
